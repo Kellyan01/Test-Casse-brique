@@ -12,6 +12,13 @@ main {
     background-color: #f1f1f1;
 }
 
+.terrain_zoneBrique {
+    width:800px;
+    height:400px;
+    background-color: rgba(200,200,200,1);
+    position: absolute;
+}
+
 .terrain_balle {
     width: 20px;
     height: 20px;
@@ -31,11 +38,11 @@ main {
     left: 370px;
 }
 
-.terrain_brique {
+.terrain_zoneBrique_brique {
     background-color: black;
     height: 50px;
     width: 50px;
-    position: relative;
+    position: absolute;
     margin:0;
     padding: 0;
 }
