@@ -9,6 +9,7 @@ function timeOut(){
     window.clearInterval(intervalMouvementBalleY);
     window.clearInterval(intervalNewBriqueAleatoire);
     window.clearInterval(intervalFuncTimer);
+    deplacementVaisseau = false;
 }
 
 function funcTimer(){

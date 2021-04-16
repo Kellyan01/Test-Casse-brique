@@ -1,3 +1,4 @@
+let deplacementVaisseau = true;
 let compteTourX = 0;
 let directionX = 1;
 let compteTourY = 0;
@@ -105,13 +106,14 @@ let intervalMouvementBalleY = window.setInterval(mouvementBalleY, 5, 'Parameter 
 document.onmousemove = event => {
     let fenetre = window.visualViewport.width;
     let decalage = (fenetre-800)/2;
-
     let vaisseauX = event.clientX - decalage -30;
-    if (vaisseauX <= 0) {
-        vaisseau.style.left = '0px';
-    } else if (vaisseauX >= 740) {
-        vaisseau.style.left = '740px';
-    } else {
-        vaisseau.style.left = vaisseauX + 'px';
+    if (deplacementVaisseau == true) {
+        if (vaisseauX <= 0) {
+            vaisseau.style.left = '0px';
+        } else if (vaisseauX >= 740) {
+            vaisseau.style.left = '740px';
+        } else {
+            vaisseau.style.left = vaisseauX + 'px';
+        }
     }
 };
