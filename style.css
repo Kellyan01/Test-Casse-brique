@@ -12,6 +12,24 @@ main {
     background-color: #f1f1f1;
 }
 
+.terrain_timer {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    margin-top: -60px;
+    margin-left:850px;
+}
+
+.terrain_score {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    margin-top: 600px;
+    margin-left:850px;
+}
+
 .terrain_zoneBrique {
     width:800px;
     height:400px;
@@ -31,8 +49,8 @@ main {
 
 .terrain_vaisseau {
     width: 60px;
-    height: 60px;
-    background-color: seagreen;
+    height: 20px;
+    background-color: blue;
     position: relative;
     top: 600px;
     left: 370px;
@@ -45,4 +63,30 @@ main {
     position: absolute;
     margin:0;
     padding: 0;
+}
+
+.heurte {
+    background-color: green;
+}
+
+.endommage {
+    background-color: orange;
+}
+
+.fragile {
+    background-color: red;
+}
+
+#timeOut {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 400px;
+    width: 600px;
+    margin: 0 auto;
+    top: 150;
+    background-color: rgba(255,255,255,0.7);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
 }

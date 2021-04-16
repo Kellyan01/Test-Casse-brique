@@ -7,6 +7,10 @@ let vaisseau = document.getElementById("vaisseau");
 let positionBalleX;
 let positionBalleY;
 let coordonneesBriqueExistante = [];
+let score = 0;
+
+let scorePlaceholder = document.querySelector(".terrain_score h2");
+scorePlaceholder.textContent = score + " points";
 
 //fonction qui prend une taille en pixel et retourne sa valeur numérique
 function integralString (taille) {
@@ -20,7 +24,8 @@ function mouvementBalleX (){
     positionBalleX = 1*compteTourX + 'px'; //si modifie le multiplicateur, ajuster la borne supérieur de compteTourX
     balle.style.left = positionBalleX;
 
-    collisionBalleVaisseauX ();
+    collisionBalleVaisseauX();
+    collisionBriqueX();
 
     if (directionX == 1){
         compteTourX = compteTourX+1;
@@ -41,7 +46,7 @@ function mouvementBalleY (){
     positionBalleY = 2*compteTourY + 'px'; //si modifie le multiplicateur, ajuster la borne supérieur de compteTourY
     balle.style.top = positionBalleY;
 
-    collisionBalleVaisseauY ();
+    collisionBalleVaisseauY();
     collisionBriqueY();
 
     if (directionY == 1){
@@ -58,11 +63,12 @@ function mouvementBalleY (){
     }
 }
 
-
+//gestion collision Y balle-vaisseau - origine balle : Centre
 function collisionBalleVaisseauY () {
-    if (positionBalleY == '680px' || positionBalleY == '600px'){
+    let numberPositionBalleY = integralString(positionBalleY) + 10;
+    if (numberPositionBalleY == 650 || numberPositionBalleY == 610){
         let collisionPositionBalleX = window.getComputedStyle(balle,null).getPropertyValue("left");
-        let numberPositionBalleX = integralString(collisionPositionBalleX);
+        let numberPositionBalleX = integralString(collisionPositionBalleX) + 10;
 
         let collisionPositionVaisseauX = window.getComputedStyle(vaisseau,null).getPropertyValue("left");
         let NumberPositionVaisseauX = integralString(collisionPositionVaisseauX);
@@ -73,17 +79,18 @@ function collisionBalleVaisseauY () {
     }
 }
 
+//gestion collision X balle-vaisseau - origine balle : Center
 function collisionBalleVaisseauX () {
     let collisionPositionBalleX = window.getComputedStyle(balle,null).getPropertyValue("left");
-    let numberPositionBalleX = integralString(collisionPositionBalleX);
+    let numberPositionBalleX = integralString(collisionPositionBalleX) + 10;
 
     let collisionPositionVaisseauX = window.getComputedStyle(vaisseau,null).getPropertyValue("left");
-    let NumberPositionVaisseauX = integralString(collisionPositionVaisseauX);
+    let NumberPositionVaisseauX = integralString(collisionPositionVaisseauX) + 10;
 
     if (numberPositionBalleX == NumberPositionVaisseauX + 60 || numberPositionBalleX == NumberPositionVaisseauX -20) {
         let numberPositionBalleY = integralString(positionBalleY);
 
-        if (numberPositionBalleY <= 680 && numberPositionBalleY >= 600){
+        if (numberPositionBalleY <= 650 && numberPositionBalleY >= 610){
             directionX = directionX * (-1);
         }
     }
