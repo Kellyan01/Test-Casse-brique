@@ -6,6 +6,7 @@ let balle = document.getElementById("balle");
 let vaisseau = document.getElementById("vaisseau");
 let positionBalleX;
 let positionBalleY;
+let coordonneesBriqueExistante = [];
 
 //fonction qui prend une taille en pixel et retourne sa valeur numérique
 function integralString (taille) {
@@ -41,6 +42,7 @@ function mouvementBalleY (){
     balle.style.top = positionBalleY;
 
     collisionBalleVaisseauY ();
+    collisionBriqueY();
 
     if (directionY == 1){
         compteTourY = compteTourY+1;
