@@ -104,7 +104,8 @@ let intervalMouvementBalleY = window.setInterval(mouvementBalleY, 5, 'Parameter 
 
 
 document.onmousemove = event => {
-    let fenetre = window.visualViewport.width;
+    //let fenetre = window.visualViewport.width;
+    let fenetre = window.innerWidth;
     let decalage = (fenetre-800)/2;
     let vaisseauX = event.clientX - decalage -30;
     if (deplacementVaisseau == true) {
